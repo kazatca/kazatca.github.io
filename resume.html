@@ -1,0 +1,245 @@
+<html lang="ru">
+  <head>
+  <title>Овчинников В.В.</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <style>
+    @font-face {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../fonts/manrope-v13-latin-regular.eot');
+      src: local(''),
+        url('../fonts/manrope-v13-latin-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/manrope-v13-latin-regular.woff2') format('woff2'),
+        url('../fonts/manrope-v13-latin-regular.woff') format('woff'),
+        url('../fonts/manrope-v13-latin-regular.ttf') format('truetype'),
+        url('../fonts/manrope-v13-latin-regular.svg#Manrope') format('svg');
+    }
+
+    body {
+      background-color: #e9e9e9;
+      color: #2c2c2c;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .layout {
+      width: 1000px;
+      background-color: white;
+      margin: 0 auto;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5rem 0;
+    }
+
+    .header-factoids span {
+      padding: 0 .5rem;
+    }
+
+    .icon {
+      width: 1.5rem;
+      vertical-align: middle;
+      margin-right: .2rem;
+    }
+
+    main {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    section {
+      position: relative;
+    }
+
+    label {
+      opacity: 0.5;
+      padding-right: .2rem;
+    }
+
+    main article:first-child {
+      min-width: 300px;
+    }
+
+    a {
+      color: #2c2c2c;
+    }
+
+    section:not(:first-child) {
+      padding: 1rem;
+    }
+
+    .photo {
+      padding: 1rem;
+    }
+
+    .photo img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+
+    h1,
+    p {
+      margin: .5rem 0;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    .brief-article {
+      text-align: center;
+    }
+
+    .factoid {
+      padding-left: 1rem;
+      border-left: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .factoid:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    .stage {
+      position: relative;
+      padding-top: .2rem;
+    }
+
+    .stage::before {
+      content: "";
+      position: absolute;
+      left: -21.5px;
+      top: 15px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .position {
+      font-weight: bold;
+    }
+
+    .period {
+      opacity: .5;
+    }
+
+    .description {
+      padding-left: 1rem;
+    }
+
+    .stage-icon {
+      position: absolute;
+      left: -12.5px;
+      top: 0;
+      background-color: white;
+      padding-top: 1.5rem;
+    }
+
+    section:first-child .stage-icon {
+      top: -28px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+
+    <header>
+      <div class="photo">
+        <img src="images/me.jpeg" />
+      </div>
+      <h1>Овчинников Вячеслав Владимирович</h1>
+      <p class="header-factoids">
+        <span>Фронтенд разработчик</span>
+        <span><img class="icon" src="images/geo.svg" />г.Батуми Грузия</span>
+      </p>
+    </header>
+
+    <main>
+      <article class="brief-article">
+        <section>
+          <h2>Контакты</h2>
+          <p><a href="mailto://kazatca@gmail.com">kazatca@gmail.com</a></p>
+          <p><a href="https://t.me/kazatca">@kazatca</a></p>
+        </section>
+        <section>
+          <h2>Ищу</h2>
+          <p>2500$</p>
+          <p>Полная занятость</p>
+          <p>Удаленная работа</p>
+        </section>
+      </article>
+
+      <article>
+        <section class="factoid">
+          <img class="icon stage-icon" src="images/person.svg" />
+          <h2>Обо мне</h2>
+          <p><label>Дата рождения:</label><span>24 октября 1984 (37 лет)</span></p>
+          <p><label>Пол:</label><span>Мужской</span></p>
+          <p><label>Образование:</label><span>Высшее</span></p>
+        </section>
+        <section class="factoid">
+          <img class="icon stage-icon" src="images/work.svg" />
+          <h2>Опыт работы</h2>
+          <div class="stage">
+            <p class="position">
+              Фронтенд разработчик
+            </p>
+            <p>United Traders</p>
+            <p class="period">август 2017 - настоящее время (5 лет)</p>
+            <p class="description">
+              Разработка фронтовой части продукта Investment.
+              Миграция на TypeScript, миграция на GraphQL с внедрением gateway GQL-to-REST, с плавным переездом на
+              Apollo
+              Federation.
+              Самописный серверный рендеринг.
+              Отказ от SSR в пользу статически собираемых страниц.
+              Выделение общих компонентов в микрофронты.
+            </p>
+          </div>
+          <div class="stage">
+            <p class="position">
+              Full stack разработчик
+            </p>
+            <p>ООО "МК-Групп"</p>
+            <p class="period">июнь 2011 - июль 2017 (6 лет)</p>
+            <p class="description">
+              Создание и внедрение системы складского учета (упрощенная версия moysklad.ru на php5+mysql).
+              Поддержка it-инфраструктуры и пользователей.
+              Создание интернет-магазина (nodejs, express, react+redux, mysql)
+            </p>
+          </div>
+
+        </section>
+        <section class="factoid">
+          <img class="icon stage-icon" src="images/school.svg" />
+          <h2>Образование</h2>
+          <div class="stage">
+            <p class="position">
+              Комсомольский-на-Амуре Технический Государственный Университет
+            </p>
+            <p>
+              Факультет компьютерных технологий (Программное обеспечение компьютерной техники и автоматизированных
+              систем)
+            </p>
+            <p class="period">
+              2000 - 2005, очная форма
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+
+</html>
