@@ -2,6 +2,7 @@
   <head>
   <title>Овчинников В.В.</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <style>
     @font-face {
@@ -21,6 +22,13 @@
       background-color: #e9e9e9;
       color: #2c2c2c;
       font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+    }
+
+    @media (max-width: 1000px) {
+      body {
+        font-size: 16px;
+      }
     }
 
     .layout {
@@ -31,12 +39,27 @@
       box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.1);
     }
 
+    @media (max-width: 1000px) {
+      body {
+        margin: 0;
+      }
+      .layout {
+        width: 100%;
+      }
+    }
+
     header {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       padding: 5rem 0;
+    }
+
+    @media (max-width: 1000px) {
+      header {
+        padding: 2rem 0;
+      }
     }
 
     .header-factoids span {
@@ -53,6 +76,22 @@
       padding: 2rem;
       display: flex;
       justify-content: space-around;
+    }
+
+    @media (max-width: 1000px) {
+      main {
+        padding: 1rem;
+        flex-direction: column-reverse;
+      }
+      .desktop-only {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1001px) {
+      .mobile-only {
+        display: none;
+      }
     }
 
     section {
@@ -86,9 +125,22 @@
       border-radius: 50%;
     }
 
+    @media (max-width: 1000px) {
+      .photo img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
     h1,
     p {
       margin: .5rem 0;
+    }
+
+    @media (max-width: 1000px) {
+      h1{
+        font-size: 1.5rem;
+      }
     }
 
     h2 {
@@ -159,7 +211,8 @@
       <div class="photo">
         <img src="images/me.jpeg" />
       </div>
-      <h1>Овчинников Вячеслав Владимирович</h1>
+      <h1 class="desktop-only">Овчинников Вячеслав Владимирович</h1>
+      <h1 class="mobile-only">Овчинников Вячеслав</h1>
       <p class="header-factoids">
         <span>Фронтенд разработчик</span>
         <span><img class="icon" src="images/geo.svg" />г.Батуми Грузия</span>
@@ -207,6 +260,22 @@
               Отказ от SSR в пользу статически собираемых страниц.
               Выделение общих компонентов в микрофронты.
             </p>
+            <p class="description">
+              Пришел в компанию, когда та начала развивать продукт Investment. 
+              В команде из 3 человек (2 фронта и 1 верстальщик) участвовал в создании фронтовой части на React (сам investment и лэндинги).
+              В дальнейшем для упрощения поддержки и реализации новых фич принимал участие в переписывании кодовой базы на TypeScript 
+              и внедрении Cypress для тестирования. Так же поучаствовал в внедрении GraphQL с неожиданной стороны - со стороны фронтенда. 
+              Для этого написал и внедрил GQL-to-RESTs gateway. Это был интересный опыт - первая сложная задача на бэкенд и получилось это относительно быстро,
+              из-за того, что контракт разрабатывался под уже работающий фронтенд и не нужно было проталкивать изменения через бэкенд команду. 
+              Затем gateway плавно переехал на Apollo Federation силами бэкендеров.
+              Так же принимал участие во внедрении серверного рендеринга. Это потребовало адаптировать фронтовую часть под запуск на nodejs и написать сам
+              рендерер. Позже от SSR отказались в пользу периодической сборки статики и CDN (aws).
+              Со временем стало тяжело поддерживать общий компоненты в разных продуктах, решили выделить их в микрофронтенды, чем я тоже занимался.
+              Время показало, что это было полезно, хотя интеграции их между собой — отдельная головная боль.
+            </p>
+            <p>
+              Умные слова: React, Redux, MobX, NodeJs, Apollo, GraphQL, TypeScript, Cypress, SSR.
+            </p>
           </div>
           <div class="stage">
             <p class="position">
@@ -217,7 +286,22 @@
             <p class="description">
               Создание и внедрение системы складского учета (упрощенная версия moysklad.ru на php5+mysql).
               Поддержка it-инфраструктуры и пользователей.
-              Создание интернет-магазина (nodejs, express, react+redux, mysql)
+              Создание интернет-магазина (nodejs, express, react+redux, mysql).
+            </p>
+            <p class="description">
+              За время работы с нуля написал бэкенд и фронтенд системы складского учета. 
+              Пользовались системой 3-4 человека, так что вопросов к быстродействию не было. 
+              Оптимизировать приходилось только из спортивного интереса. 
+              Но зато за время работы удалось попробовать несколько стэков. 
+              Начал с php + mysql, в дальнейшем освоил React и Redux.
+              Через примерно год работы переписал бэкенд на JavaScript (nodejs) и попробовал использовать NoSQL БД (mongo).
+              Со временем осознал, что это была неудачная идея. 
+              К примеру, стало понятно, что неупорядоченный map reduce не позволяет правильно формировать себестоимость, 
+              а других существенных плюсов от использования mongo не обнаружилось. 
+              Вернулся к mysql, но уже на nodejs.
+              В целом самописного решения не требовалось, вполне мог подойти любой готовый продукт, которые тогда уже были доступны. 
+              В любом случае складской учет из полностью бумажной неразберихи перешел к удобному и простому процессу, 
+              к тому же появилась возможность смотреть все нужные показатели и отчеты в удобном виде в телефоне.
             </p>
           </div>
 
