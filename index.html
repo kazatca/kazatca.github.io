@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Rad Kazatca</title>
   <style type="text/css">
-  body{
-    background: black;
-  }
+    body {
+      background: black;
+    }
   </style>
+  <script>
+    import('https://fpjscdn.net/v3/zlcqe5kP8WTcTpE6jqLf')
+      .then(FingerprintJS => FingerprintJS.load())
+      .then(fp => fp.get())
+      .then(result => console.log(result))
+  </script>
 </head>
+
 <body>
 
 </body>
+
 </html>
